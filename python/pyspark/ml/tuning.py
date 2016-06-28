@@ -298,6 +298,12 @@ class CrossValidatorModel(Model, ValidatorParams):
         bestModel = self.bestModel.copy(extra)
         avgMetrics = self.avgMetrics
         return CrossValidatorModel(bestModel, avgMetrics)
+    
+    def get_metrics(self):
+           """
+           Gets the cross validation metics while as were used while fitting using Cross Validation.
+           """
+           return self.avgMetrics
 
 
 class TrainValidationSplit(Estimator, ValidatorParams):
